@@ -80,8 +80,7 @@ public class Main {
         return Result;
     }
     public static void main(String[] args) {
-        String Salt = "1435660288" , OriReq , MD5Req = null , MD5ret , WebReq = null , ResPon = null;// 原始输入 MD5加密请求 百度翻译请求 百度翻译返回
-        final String AppID = "20230519001683413" , WebSec = "XRc6hJz7J9mTHyR402qp";
+        String Salt = "1435660288" , OriReq , MD5Req = null , MD5ret , WebReq = null , ResPon = null , AppID = null , WebSec = null;
         Scanner scanner = new Scanner(System.in);
         System.out.println("欢迎使用「Sinetian的英译中翻译器」");
         System.out.print("请提供原文本：");
