@@ -1,0 +1,6 @@
+msg [username] [msg] 您可以通过这个来给不在房间的用户留言，当用户进入房间后会收到您的留言
+number 您可以通过发送number与我玩猜数字游戏，详细规则在您发送number时将会公布
+history 查看历史记录，也就是当您发送history时，我将会发送给您最近的聊天记录
+mail [收件人地址] [标题] [内容] 使用onegpt内置电子邮件直接发送给某邮箱
+minbox 查看临时邮件的收件箱，即域名为xxx@loungemail.eu.org的临时邮件，xxx为任意合法字母，您可以在注册时不想使用自己的邮件，即可使用此邮件，例如try@loungemail.eu.org，在您输入minbox的时候onegpt会把最新的邮件内容发送给您
+mjunk 查看临时邮件的垃圾邮件信箱（如果不在收件箱）
