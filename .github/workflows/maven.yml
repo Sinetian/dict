@@ -67,5 +67,5 @@ jobs:
         files: |
           JTool-${{ env.SHORT_SHA }}.jar
           name: JTool release ${{ env.SHORT_SHA }}
-          tag_name: ${{ env.SHORT_SHA }}
+          tag_name: v${{ env.SHORT_SHA }}
   
