@@ -24,7 +24,7 @@ jobs:
     - name: Get short SHA
       run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
     - name: Generate release note
-        run: 
+        run: |
           echo "JTool Release ${{ env.SHORT_SHA }}" >> RELEASE_NOTE
           echo "" >> RELEASE_NOTE
           echo "Update" >> RELEASE_NOTE 
