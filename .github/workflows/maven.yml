@@ -36,29 +36,29 @@ jobs:
 
   release:
 
-  runs-on: macos-latest
+    runs-on: macos-latest
 
-  steps:
-  - name: Build with Maven
-    run: mvn package --file pom.xml
-  - name: Get short SHA
-    run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
-  - name: Generate release note
-    run: |
-      echo "JTool Release ${{ env.SHORT_SHA }}" >> RELEASE_NOTE
-      echo "" >> RELEASE_NOTE
-      echo "Updated JTool" >> RELEASE_NOTE 
-  - name: Upload Artifacts
-    uses: actions/upload-artifact@v3
-    with:
-      name: JTool-${{ env.SHORT_SHA }}
-      path: dict/target/dict-1.0.jar
-  - name: Create release
-    uses: softprops/action-gh-release@v1
-    with:
-      body_path: RELEASE_NOTE
-      files: |
-        JTool-${{ env.SHORT_SHA }}.jar
-        name: JTool release ${{ env.SHORT_SHA }}
-        tag_name: ${{ env.SHORT_SHA }}
+    steps:
+    - name: Build with Maven
+      run: mvn package --file pom.xml
+    - name: Get short SHA
+      run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
+    - name: Generate release note
+      run: |
+        echo "JTool Release ${{ env.SHORT_SHA }}" >> RELEASE_NOTE
+        echo "" >> RELEASE_NOTE
+        echo "Updated JTool" >> RELEASE_NOTE 
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: JTool-${{ env.SHORT_SHA }}
+        path: dict/target/dict-1.0.jar
+    - name: Create release
+      uses: softprops/action-gh-release@v1
+      with:
+        body_path: RELEASE_NOTE
+        files: |
+          JTool-${{ env.SHORT_SHA }}.jar
+          name: JTool release ${{ env.SHORT_SHA }}
+          tag_name: ${{ env.SHORT_SHA }}
   
