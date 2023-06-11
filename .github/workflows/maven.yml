@@ -40,7 +40,7 @@ jobs:
 
     steps:
     - name: Build with Maven
-      run: mvn package
+      run: mvn -B package --flie pom.xml
     - name: Get short SHA
       run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
     - name: Generate release note
