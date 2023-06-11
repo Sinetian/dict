@@ -55,10 +55,10 @@ jobs:
       path: dict/target/dict-1.0.jar
   - name: Create release
     uses: softprops/action-gh-release@v1
-        with:
-          body_path: RELEASE_NOTE
-          files: |
-            JTool-${{ env.SHORT_SHA }}.jar
-          name: JTool release ${{ env.SHORT_SHA }}
-          tag_name: ${{ env.SHORT_SHA }}
+    with:
+      body_path: RELEASE_NOTE
+      files: |
+        JTool-${{ env.SHORT_SHA }}.jar
+        name: JTool release ${{ env.SHORT_SHA }}
+        tag_name: ${{ env.SHORT_SHA }}
   
