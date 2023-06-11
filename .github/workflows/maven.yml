@@ -32,7 +32,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: JTool-${{ env.SHORT_SHA }}
-        path: dict/target/dict-1.0.jar
+        path: target/dict-1.0.jar
 
   release:
 
@@ -52,7 +52,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: JTool-${{ env.SHORT_SHA }}
-        path: dict/target/dict-1.0.jar
+        path: target/dict-1.0.jar
     - name: Create release
       uses: softprops/action-gh-release@v1
       with:
