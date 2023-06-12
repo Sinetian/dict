@@ -29,15 +29,12 @@ jobs:
         echo "JTool Release ${{ env.SHORT_SHA }}" >> RELEASE_NOTE
         echo "" >> RELEASE_NOTE
         echo "Updated JTool" >> RELEASE_NOTE 
-    - name: Upload Artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: JTool-${{ env.SHORT_SHA }}.jar
-        path: target/dict-1.0.jar
+    - name: Release file
+      run: cat ./target/dict-1.0.jar
     - name: Create release
       uses: softprops/action-gh-release@v1
       with:
         body_path: RELEASE_NOTE
-        files: JTool-${{ env.SHORT_SHA }}.jar
+        files: dict-1.0.jar
         name: JTool release ${{ env.SHORT_SHA }} 
         tag_name: v$(date +'%Y').$(date +'%m').$(date +'%d')
