@@ -22,12 +22,6 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Get current year
-      run: echo "YEAR::$(date +'%Y')" >> $GITHUB_ENV
-    - name: Get current year
-      run: echo "MONTH::$(date +'%m')" >> $GITHUB_ENV
-    - name: Get current year
-      run: echo "DAY::$(date +'%d')" >> $GITHUB_ENV
     - name: Get short SHA
       run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
     - name: Generate release note
@@ -46,4 +40,4 @@ jobs:
         body_path: RELEASE_NOTE
         files: JTool-${{ env.SHORT_SHA }}.jar
         name: JTool release ${{ env.SHORT_SHA }} 
-        tag_name: v$YEAR.$MONTH.$DAY
+        tag_name: v$(date +'%Y').$(date +'%m').$(date +'%d')
