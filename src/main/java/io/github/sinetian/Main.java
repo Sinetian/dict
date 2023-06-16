@@ -82,13 +82,13 @@ public class Main {
     public static void main(String[] args) {
         String Salt = "1435660288" , OriReq , MD5Req = null , MD5ret , WebReq = null , ResPon = null , AppID = null , WebSec = null;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("欢迎使用「Sinetian的英译中翻译器」");
+        System.out.println("欢迎使用「Sinetian的中文翻译器」");
         System.out.print("请提供原文本：");
         OriReq = scanner.nextLine();
         System.out.println("请稍后……");
         MD5Req = AppID + OriReq + Salt + WebSec;
         MD5ret = encryption(MD5Req);
-        WebReq = "http://api.fanyi.baidu.com/api/trans/vip/translate?q=" + OriReq + "&from=en&to=zh&appid=" + AppID + "&salt=" + Salt + "&sign=" + MD5ret;
+        WebReq = "http://api.fanyi.baidu.com/api/trans/vip/translate?q=" + OriReq + "&from=auto&to=zh&appid=" + AppID + "&salt=" + Salt + "&sign=" + MD5ret;
         ResPon = httpsGet(WebReq);
         JSONArray object = JSONObject.parseObject(ResPon).getJSONArray("trans_result");
         Iterator<Object> it = object.iterator();// 使用Iterator迭代器
