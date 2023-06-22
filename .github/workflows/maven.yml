@@ -32,10 +32,10 @@ jobs:
         echo "JTool Release ${{ env.SHORT_SHA }}" >> RELEASE_NOTE
         echo "" >> RELEASE_NOTE
         echo "JTool已于$(date +'%Y').$(date +'%m').$(date +'%d')更新。" >> RELEASE_NOTE 
-    - name: Create release
-      - id: tag_name
+    - name: Get date
+    - id: tag_name
         run: echo "version=$(date +v%Y.%m.%d)" >> "$GITHUB_OUTPUT"
-
+    - name: Create release
       uses: softprops/action-gh-release@v1
       with:
         body_path: RELEASE_NOTE
