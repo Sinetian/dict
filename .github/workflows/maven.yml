@@ -34,7 +34,7 @@ jobs:
         echo "JTool已于$(date +'%Y').$(date +'%m').$(date +'%d')更新。" >> RELEASE_NOTE 
     - name: Get date
     - id: tag_name
-        run: echo "VERSION=$(date +v%Y.%m.%d)" >> $GITHUB_ENV
+        run: echo "VERSION=${date +v%Y.%m.%d}" >> $GITHUB_OUTPUT
     - name: Create release
       uses: softprops/action-gh-release@v1
       with:
