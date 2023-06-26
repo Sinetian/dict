@@ -34,11 +34,13 @@ jobs:
         echo "JTool已于$(date +'%Y').$(date +'%m').$(date +'%d')更新。" >> RELEASE_NOTE 
     - name: Get date
     - id: tag_name
-        run: echo "VERSION=$(date +'%Y').$(date +'%m').$(date +'%d')" >> $GITHUB_OUTPUT
+        run: |
+          echo "" >> DATE
+          echo "VERSION=$(date +'%Y').$(date +'%m').$(date +'%d')" >> DATE
     - name: Create release
       uses: softprops/action-gh-release@v1
       with:
         body_path: RELEASE_NOTE
         files: target/dict-1.0.jar
         name: JTool release ${{ env.SHORT_SHA }} 
-        tag_name: ${{ steps.tag_name.outputs.version }}
+        tag_name: ${{ steps.tag_name.outputs.VERSION }}
