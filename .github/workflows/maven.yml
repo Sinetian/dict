@@ -36,7 +36,7 @@ jobs:
       id: tag_name
       run: |
         echo "" >> DATE
-        echo "VERSION=$(date +'%Y').$(date +'%m').$(date +'%d')" >> DATE
+        echo "VERSION=$(date +'%Y.%m.%d')" >> DATE
     - name: Create release
       uses: softprops/action-gh-release@v1
       with:
