@@ -88,7 +88,7 @@ public class Main {
         System.out.println("请稍后……");
         MD5Req = AppID + OriReq + Salt + WebSec;
         MD5ret = encryption(MD5Req);
-        WebReq = "http://api.fanyi.baidu.com/api/trans/vip/translate?q=" + OriReq + "&from=auto&to=zh&appid=" + AppID + "&salt=" + Salt + "&sign=" + MD5ret;
+        WebReq = "http://api.fanyi.baidu.com/api/trans/vip/translate?q=" + OriReq + "&from=auto&to=jp&appid=" + AppID + "&salt=" + Salt + "&sign=" + MD5ret;
         ResPon = httpsGet(WebReq);
         JSONArray object = JSONObject.parseObject(ResPon).getJSONArray("trans_result");
         Iterator<Object> it = object.iterator();// 使用Iterator迭代器
